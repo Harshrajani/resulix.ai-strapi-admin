@@ -1,8 +1,18 @@
 {
+  "$schema": "./local-schema.json", // local schema reference
   "compilerOptions": {
-    "moduleResolution": "nodenext",
-    "target": "ES2021",
-    "checkJs": true,
-    "allowJs": true
-  }
+    "target": "ES2021", // or the ECMAScript version you are targeting
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "jsx": "react-jsx", // for React projects
+    "allowJs": true, // allows JavaScript files to be compiled
+    "checkJs": true, // enables type checking on JavaScript files
+    "baseUrl": ".", // base directory for resolving non-relative module names
+    "paths": {
+      "@components/*": ["src/components/*"], // example path mapping
+      "@utils/*": ["src/utils/*"]
+    }
+  },
+  "include": ["src/**/*"], // include all files in the src directory
+  "exclude": ["node_modules", "dist"] // exclude node_modules and dist directories
 }
